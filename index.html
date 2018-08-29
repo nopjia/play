@@ -24,7 +24,17 @@
     allowvr="yes"
     allowfullscreen
     allow="vr"
-    src="https://pjia.bitbucket.io/"
+    src=""
   ></iframe>
+  <script type="text/javascript">
+    var iframe = document.querySelector("iframe");
+    if (location.hash) {
+      var hash = location.hash.substr(1);
+      console.log("hash:", hash);
+      iframe.src = "https://pjia.bitbucket.io/publications/" + hash + "/index.html";
+    } else {
+      iframe.src = "https://pjia.bitbucket.io/"
+    }
+  </script>
 </body>
 </html>
